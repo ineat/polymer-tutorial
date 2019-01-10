@@ -1,0 +1,36 @@
+body {
+  margin: 0;
+  background: #f4f0f0;
+}
+
+.container-button {
+  text-align: center;
+  margin: 2em;
+}
+
+.button {
+  margin: 2em;
+  text-align: center;
+
+  --button-width: 350px;
+  --button-height: 100px;
+  --button-background-color: lightgreen;
+  --button-color: black;
+  --button-font-size: 2em;
+  --button-background-ripple-color: white;
+}
+
+.content {
+  margin: 1em;
+  margin-top: 50px;
+  height: 350px;
+}
+
+.progressbar {
+  --progressbar-height: 5em;
+  --progressbar-background: lightgrey;
+  --progressbar-font-size: 3em;
+  --progressbar-text-color: black;
+  --progressbar-top-position: 12px;
+  --progressbar-value-background: lightgreen;
+}

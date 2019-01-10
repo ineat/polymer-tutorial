@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>main-project</title>
+    <script src="/node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+    <script type="module">
+      import './components/my-progress-bar/my-progress-bar.js';
+      import './components/my-button/my-button.js';
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="./src/assets/style.css">
+  </head>
+  <body>
+    <section class="content">
+      <my-progress-bar class="progressbar"></my-progress-bar>
+      <div class="container-button">
+        <my-button class="button"></my-button>
+      </div>
+    </section>
+  </body>
+
+  <script>
+      document.querySelector('.button').addEventListener('start-process', () => {
+        let processValue = 0
+        const id = setInterval(process, 30)
+        document.querySelector('.button').setAttribute('text', 'In progress...')
+        function process() {
+          if (processValue === 100) {
+            clearInterval(id);
+            document.querySelector('.button').setAttribute('text', 'Start process !')
+          } else {
+            processValue = processValue + 1
+            document.querySelector('.progressbar').setAttribute('value', processValue)
+          }
+        }
+      })
+    </script>
+</html>
